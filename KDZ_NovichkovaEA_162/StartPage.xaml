@@ -1,0 +1,21 @@
+﻿<Page x:Class="KDZ_NovichkovaEA_162.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KDZ_NovichkovaEA_162"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="StartPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Center" Foreground="Bisque">Добро пожаловать в ISugar!</Label>
+        <Label HorizontalAlignment="Center" Foreground="Black" Margin="34,31,33,-27" Width="233">Для начала войдите в свой аккаунт или пройди регистрацию</Label>
+    </Grid>
+</Page>

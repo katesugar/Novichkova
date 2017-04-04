@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace KDZ_NovichkovaEA_162
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StartPage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class StartPage : Page
     {
-        public MainWindow()
+        public StartPage()
         {
             InitializeComponent();
         }
