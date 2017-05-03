@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace KDZ_NovichkovaEA_162
 {
     /// <summary>
-    /// Логика взаимодействия для ChooseSinger.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class ChooseSinger : Page
+    public partial class MainPage : Page
     {
-        public ChooseSinger()
+        public MainPage()
         {
             InitializeComponent();
         }

@@ -24,5 +24,11 @@ namespace KDZ_NovichkovaEA_162
         {
             InitializeComponent();
         }
+
+        private void LogInButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+        }
     }
 }
