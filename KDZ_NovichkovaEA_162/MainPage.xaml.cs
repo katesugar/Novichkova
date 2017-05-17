@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 namespace KDZ_NovichkovaEA_162
 {
@@ -23,6 +23,84 @@ namespace KDZ_NovichkovaEA_162
         public MainPage()
         {
             InitializeComponent();
+            songs = DataLoad();
+            listofmusicBox.ItemsSource = songs;
         }
+        List<Song> songs = new List<Song>();
+        
+
+        public List<Song> DataLoad()
+        {
+            listofmusicBox.Items.Refresh();
+            string line;
+            List<Song> result = new List<Song>();
+            System.IO.StreamReader file = new System.IO.StreamReader("../../listofmusic.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                var temp = line.Split(',');
+                result.Add(new Song
+                {
+                    Name = temp[0],
+                    Artist = new Artist
+                    {
+                        Name = temp[1],
+                        Age = int.Parse(temp[2])
+                    },
+                    Album = new Album
+                    {
+                        Name = temp[3],
+                        Year = int.Parse(temp[4])
+
+                    },
+                    Year = int.Parse(temp[5]),
+                    Genre = temp[6]
+                }
+                    );
+
+            }
+
+            file.Close();
+            return result;
+
+        }
+        public void SaveData(Song newSong)
+        {
+            using (FileStream fs = new FileStream("../../listofmusic.txt", FileMode.Open))
+            {
+                using (StreamWriter sw = new StreamWriter(fs, Encoding.GetEncoding(1251)))
+                {
+                    for (int i = 0; i < songs.Count; i++)
+                    {
+                        sw.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", songs[i].Name, songs[i].Artist.Name, songs[i].Artist.Age, songs[i].Album.Name, songs[i].Album.Year, songs[i].Year, songs[i].Genre);
+                    }
+
+                }
+            }
+            listofmusicBox.Items.Refresh();
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewSongPage newSongPage = new NewSongPage();
+            NavigationService.Navigate(newSongPage);
+
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchSong.IsChecked == true)
+            {
+                if (string.IsNullOrWhiteSpace(SearchTextBox.Text)) listofmusicBox.ItemsSource = songs;
+                else listofmusicBox.ItemsSource = songs.FindAll(song => song.Name.ToUpper().Contains(SearchTextBox.Text.ToUpper()));
+            }
+            if(SearchArtist.IsChecked==true)
+            {
+                if (string.IsNullOrWhiteSpace(SearchTextBox.Text)) listofmusicBox.ItemsSource = songs;
+                else listofmusicBox.ItemsSource = songs.FindAll(song => song.Artist.Name.ToUpper().Contains(SearchTextBox.Text.ToUpper()));
+            }
+
+        }
+
     }
 }

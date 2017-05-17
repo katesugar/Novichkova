@@ -10,25 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace KDZ_NovichkovaEA_162
 {
     /// <summary>
-    /// Логика взаимодействия для StartPage.xaml
+    /// Логика взаимодействия для NewSongWindow.xaml
     /// </summary>
-    public partial class StartPage : Page
+    public partial class NewSongWindow : Window
     {
-        public StartPage()
+        public NewSongWindow()
         {
             InitializeComponent();
-        }
-
-        private void LogInButton_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationPage registrationPage = new RegistrationPage();
-            NavigationService.Navigate(registrationPage);
+            
         }
     }
 }
+

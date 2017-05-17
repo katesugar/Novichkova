@@ -16,12 +16,14 @@
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition Width="100"></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="125*" ></ColumnDefinition>
+            <ColumnDefinition Width="125"></ColumnDefinition>
+            <ColumnDefinition Width="113"></ColumnDefinition>
+            <ColumnDefinition Width="137*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="LogInButton" Grid.Column="1" Grid.Row="3" Content="Log In" FontFamily="Rupster Script Free" Click="LogInButton_Click"/>
-        <Label x:Name="GreetingText" Grid.Column="0" Grid.Row="1" Content="Добро пожаловать в музыкальное приложение iSugar!" Grid.ColumnSpan="3" HorizontalAlignment="Center" Foreground="#FFC15959" FontSize="18" FontFamily="Rupster Script Free"/>
-        <Label x:Name="GreetingText1" Grid.Column="0" Grid.Row="2" Content="Для начала работы авторизуйтесь в приложении." Grid.ColumnSpan="3" HorizontalAlignment="Center" Foreground="#FFB86363" FontSize="18" FontFamily="Rupster Script Free"/>
+        <Button x:Name="LogInButton" Grid.Column="1" Grid.Row="3" Content="Авторизация" FontFamily="Rupster Script Free" Click="LogInButton_Click" Margin="0,0,10,0"/>
+        <Button Grid.Column="2" Grid.Row="3" Content="Войти, как гость" FontFamily="Rupster Script Free"/>
+        <Label x:Name="GreetingText" Grid.Column="0" Grid.Row="1" Content="Добро пожаловать в музыкальное приложение iSugar!" Grid.ColumnSpan="4" HorizontalAlignment="Center" Foreground="#FFC15959" FontSize="18" FontFamily="Rupster Script Free" Margin="22,0" Width="456"/>
+        <Label x:Name="GreetingText1" Grid.Column="0" Grid.Row="2" Content="Для редактирования пройдите авторизацию." Grid.ColumnSpan="4" HorizontalAlignment="Center" Foreground="#FFB86363" FontSize="18" FontFamily="Rupster Script Free" Margin="60,0" Width="380"/>
     </Grid>
 </Page>

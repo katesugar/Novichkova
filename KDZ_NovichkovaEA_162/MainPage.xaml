@@ -5,10 +5,33 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KDZ_NovichkovaEA_162"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="300" d:DesignWidth="500"
       Title="MainPage">
 
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="54*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <RadioButton x:Name="SearchArtist" Content="По исполнителю" Grid.ColumnSpan="2" Grid.Column="2" Margin="38,13,13,31"  />
+        <RadioButton x:Name="SearchSong"  Content="По названию" IsChecked="True" Grid.ColumnSpan="2" Grid.Column="2" Margin="38,35,13,9"/>
+        <Border Grid.ColumnSpan="2" Margin="0,0,0,23" Height="35" Padding="5" Background="#4E87D4">
+            <Label Margin="-5,2,-5,-3" VerticalAlignment="Center">Музыка</Label>
+        </Border>
+
+        <ListBox x:Name="listofmusicBox" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0,35,0,0" />
+        <TextBox x:Name="SearchTextBox" Grid.Column="2"  Margin="38,0,0,37" Grid.ColumnSpan="2" TextChanged="SearchTextBox_TextChanged" Grid.Row="1"/>
+        <Button Grid.Column="3" Grid.Row="3" Click="Button_Click" Content="Добавить"/>
     </Grid>
 </Page>
+

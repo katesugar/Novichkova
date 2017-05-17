@@ -1,0 +1,33 @@
+﻿<Window x:Class="KDZ_NovichkovaEA_162.NewSongWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KDZ_NovichkovaEA_162"
+        mc:Ignorable="d"
+        Title="NewSongWindow" Height="300" Width="500" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="0,10,0,59">Введите название песни:</TextBlock>
+        <TextBox x:Name="AddNameOfSongTextBox" Grid.Column="0" Grid.Row="0" Margin="0,36,10,26"/>
+        <TextBlock Margin="0,12,0,57" Grid.Column="1">Введите имя исполнителя:</TextBlock>
+        <TextBox x:Name="AddNameOfSingerTextBox" Grid.Column="1" Margin="0,36,10,26"/>
+        <TextBlock Margin="0,68,0,0">Введите название альбома:</TextBlock>
+        <TextBox x:Name="AddNameOfAlbumTextBox" Grid.Row="1" Margin="0,10,10,52"></TextBox>
+        <TextBlock Grid.Column="1" Margin="0,68,0,0">Введите возраст исполнителя:</TextBlock>
+        <TextBox x:Name="AddAgeTextBox" Grid.Row="1" Margin="0,10,10,52" Grid.Column="1"/>
+        <TextBlock Grid.Row="1" Margin="0,41,0,28">Введите год выхода песни:</TextBlock>
+        <TextBox x:Name="AddYearOfSongTextBox" Grid.Row="1" Margin="0,62,10,0" ></TextBox>
+        <TextBlock Grid.Column="1" Grid.Row="1" Margin="0,41,0,28">Введите год выхода альбома:</TextBlock>
+        <TextBox x:Name="AddYearOfAlbumTextBox" Grid.Column="1" Grid.Row="1" Margin="0,62,10,0"></TextBox>
+    </Grid>
+</Window>
