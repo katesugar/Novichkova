@@ -26,7 +26,7 @@ namespace KDZ_NovichkovaEA_162
             songs = DataLoad();
             listofmusicBox.ItemsSource = songs;
         }
-        List<Song> songs = new List<Song>();
+        public List<Song> songs = new List<Song>();
         
 
         public List<Song> DataLoad()
@@ -63,15 +63,15 @@ namespace KDZ_NovichkovaEA_162
             return result;
 
         }
-        public void SaveData(Song newSong)
+        public void SaveData()
         {
-            using (FileStream fs = new FileStream("../../listofmusic.txt", FileMode.Open))
+            using (FileStream fs = new FileStream("../../listofmusic.txt", FileMode.Create))
             {
                 using (StreamWriter sw = new StreamWriter(fs, Encoding.GetEncoding(1251)))
                 {
                     for (int i = 0; i < songs.Count; i++)
                     {
-                        sw.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", songs[i].Name, songs[i].Artist.Name, songs[i].Artist.Age, songs[i].Album.Name, songs[i].Album.Year, songs[i].Year, songs[i].Genre);
+                        sw.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}", songs[i].Name, songs[i].Artist.Name, songs[i].Artist.Age, songs[i].Album.Name, songs[i].Album.Year, songs[i].Year, songs[i].Genre);
                     }
 
                 }
@@ -80,7 +80,7 @@ namespace KDZ_NovichkovaEA_162
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             NewSongPage newSongPage = new NewSongPage();
             NavigationService.Navigate(newSongPage);
@@ -102,5 +102,28 @@ namespace KDZ_NovichkovaEA_162
 
         }
 
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (listofmusicBox.SelectedIndex != -1)
+            {
+                songs.RemoveAt(listofmusicBox.SelectedIndex);
+                SaveData();
+                listofmusicBox.Items.Refresh();
+            }
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewSongPage newSongPage = new NewSongPage();
+            DataLoad();
+            
+            
+             
+        }
+
+        private void InfoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

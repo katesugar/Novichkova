@@ -10,28 +10,40 @@
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="58*"/>
-            <RowDefinition Height="57*"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="21*"/>
-            <RowDefinition Height="54*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="127*"/>
             <ColumnDefinition Width="175*"/>
-            <ColumnDefinition Width="78*"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="62"/>
         </Grid.ColumnDefinitions>
 
-        <RadioButton x:Name="SearchArtist" Content="По исполнителю" Grid.ColumnSpan="2" Grid.Column="2" Margin="38,13,13,31"  />
-        <RadioButton x:Name="SearchSong"  Content="По названию" IsChecked="True" Grid.ColumnSpan="2" Grid.Column="2" Margin="38,35,13,9"/>
-        <Border Grid.ColumnSpan="2" Margin="0,0,0,23" Height="35" Padding="5" Background="#4E87D4">
-            <Label Margin="-5,2,-5,-3" VerticalAlignment="Center">Музыка</Label>
+        <RadioButton x:Name="SearchArtist" Content="По исполнителю" Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="1"  />
+        <RadioButton x:Name="SearchSong"  Content="По названию" IsChecked="True" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="15" Margin="0,5"/>
+        <Border Grid.ColumnSpan="2" Padding="5" Background="#4E87D4">
+            <Label Margin="-5" VerticalAlignment="Center" Height="28">Музыка</Label>
         </Border>
 
-        <ListBox x:Name="listofmusicBox" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0,35,0,0" />
-        <TextBox x:Name="SearchTextBox" Grid.Column="2"  Margin="38,0,0,37" Grid.ColumnSpan="2" TextChanged="SearchTextBox_TextChanged" Grid.Row="1"/>
-        <Button Grid.Column="3" Grid.Row="3" Click="Button_Click" Content="Добавить"/>
+        <ListBox x:Name="listofmusicBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="9" />
+        <TextBox x:Name="SearchTextBox" Grid.Column="3"  Grid.ColumnSpan="2" TextChanged="SearchTextBox_TextChanged" Grid.Row="2"/>
+        <Button x:Name="AddButton" Grid.Column="3" Grid.Row="4" Click="AddButton_Click" Content="Добавить" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Поиск:" Grid.Column="2" VerticalAlignment="Center" Height="25"/>
+        <Button x:Name="DeleteButton" Grid.ColumnSpan="2" Content="Удалить" Grid.Column="3"  Grid.Row="6" Click="DeleteButton_Click"/>
+        <Button x:Name="EditButton" Content="Редактировать"  Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="8" Click="EditButton_Click"/>
+        <Button x:Name="InfoButton" Content="Инфо" Grid.ColumnSpan="2" Grid.Column="3"  Grid.Row="10" Height="24" VerticalAlignment="Top" Click="InfoButton_Click"/>
     </Grid>
 </Page>
 

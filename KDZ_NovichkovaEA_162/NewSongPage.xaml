@@ -11,28 +11,43 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Margin="0,12,0,57">Введите название песни:</TextBlock>
-        <TextBox x:Name="AddNameOfSongTextBox" Grid.Column="0" Grid.Row="0" Margin="0,41,10,26"/>
-        <TextBlock Margin="0,12,0,57" Grid.Column="1">Введите имя исполнителя:</TextBlock>
-        <TextBox x:Name="AddNameOfArtistTextBox" Grid.Column="1" Margin="0,41,10,26"/>
-        <TextBlock Margin="0,73,0,89" Grid.RowSpan="2">Введите название альбома:</TextBlock>
-        <TextBox x:Name="AddNameOfAlbumTextBox" Margin="0,10,10,58" Grid.Row="1"/>
-        <TextBlock Grid.Column="1" Margin="5,73,-5,89" Grid.RowSpan="2">Введите возраст исполнителя:</TextBlock>
-        <TextBox x:Name="AddAgeTextBox" Grid.Row="1" Margin="0,10,10,58" Grid.Column="1"/>
-        <TextBlock Grid.Row="1" Margin="0,41,0,28">Введите год выхода песни:</TextBlock>
-        <TextBox x:Name="AddYearOfSongTextBox" Grid.Row="1" Margin="0,68,10,0" />
-        <TextBlock Grid.Column="1" Grid.Row="1" Margin="0,41,0,28">Введите год выхода альбома:</TextBlock>
-        <TextBox x:Name="AddYearOfAlbumTextBox" Grid.Column="1" Grid.Row="1" Margin="0,68,10,0"></TextBox>
-        <TextBlock Margin="0,16,0,49" Grid.Row="2">Введите жанр:</TextBlock>
-        <TextBox x:Name="AddGenreTextBox" HorizontalAlignment="Left" Margin="0,35,0,0" Grid.Row="2" VerticalAlignment="Top" Width="227" Height="25" />
-        <Button x:Name="ButtonAdd" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="152,61,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Height="22" Click="ButtonAdd_Click"/>
+        <TextBlock Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,4,0,3">Введите название песни:</TextBlock>
+        <TextBox x:Name="AddNameOfSongTextBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" />
+        <TextBlock  Grid.Column="4" Grid.ColumnSpan="3" VerticalAlignment="Center">Введите имя исполнителя:</TextBlock>
+        <TextBox x:Name="AddNameOfArtistTextBox" Grid.Column="4" Margin="0,1,0,0" Grid.Row="1" Grid.ColumnSpan="3" />
+        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="3">Введите название альбома:</TextBlock>
+        <TextBox x:Name="AddNameOfAlbumTextBox" Grid.Row="4" Grid.ColumnSpan="3"/>
+        <TextBlock Grid.Column="4" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="3">Введите возраст исполнителя:</TextBlock>
+        <TextBox x:Name="AddAgeTextBox" Grid.Row="4"  Grid.Column="4"  Grid.ColumnSpan="3"/>
+        <TextBlock Grid.Row="6" Grid.ColumnSpan="3" VerticalAlignment="Center">Введите год выхода песни:</TextBlock>
+        <TextBox x:Name="AddYearOfSongTextBox" Grid.Row="7" Grid.ColumnSpan="3" />
+        <TextBlock Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3" VerticalAlignment="Center">Введите год выхода альбома:</TextBlock>
+        <TextBox x:Name="AddYearOfAlbumTextBox" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3"></TextBox>
+        <TextBlock  Grid.Row="9" Grid.ColumnSpan="3" VerticalAlignment="Center">Введите жанр:</TextBlock>
+        <TextBox x:Name="AddGenreTextBox"  Grid.Row="10" Grid.ColumnSpan="3" />
+        <Button x:Name="ButtonAdd" Content="Добавить" Grid.Column="5"  Grid.Row="10"  Click="ButtonAdd_Click" Grid.ColumnSpan="2"/>
     </Grid>
 
 </Page>

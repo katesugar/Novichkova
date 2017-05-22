@@ -28,6 +28,10 @@ namespace KDZ_NovichkovaEA_162
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
+            
             newSong = new Song
             {
                 Name=AddNameOfSongTextBox.Text,
@@ -44,9 +48,19 @@ namespace KDZ_NovichkovaEA_162
                 Year = int.Parse(AddYearOfSongTextBox.Text),
                 Genre = AddGenreTextBox.Text
             };
+                
+
+           
             MainPage mainPage = new MainPage();
-            mainPage.SaveData(newSong);
+            mainPage.songs.Add(newSong);
+            mainPage.SaveData();
             NavigationService.Navigate(mainPage);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка!", "Повторите ввод!", MessageBoxButton.OK);
+
+            }
         }
     }
 }

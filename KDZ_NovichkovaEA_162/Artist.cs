@@ -9,7 +9,13 @@ namespace KDZ_NovichkovaEA_162
     public class Artist
     {
         public string Name;
-        public int Age;
+        private int age;
+
+        public int Age
+        {
+            get { return age; }
+            set { if (value < 0) throw new ArgumentException("Возраст не может быть отрицательным."); else { age = value; }; }
+        }
 
         public Artist()
         {

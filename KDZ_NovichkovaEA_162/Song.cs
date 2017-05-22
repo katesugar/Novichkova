@@ -12,7 +12,14 @@ namespace KDZ_NovichkovaEA_162
         public Album Album;
         public Artist Artist;
         public string Genre;
-        public int Year;
+        private int year;
+
+        public int Year
+        {
+            get { return year; }
+            set { if (value < 0 || value > 2017) throw new ArgumentException("Год не может иметь отрицательное значение или значение больше, чем 2017."); else { year = value; }; }
+        }
+
 
         public Song()
         {
