@@ -34,12 +34,17 @@
         <TextBlock Grid.Row="6">Введите пароль:</TextBlock>
         <PasswordBox Name="passwordBox" Grid.Row="7" MinWidth="200" Foreground="#FFCFBFE2" Background="#FF0F0D0D"/>
 
-        <WrapPanel Grid.Row="11" HorizontalAlignment="Right">
+        <WrapPanel Grid.Row="10" HorizontalAlignment="Right" Margin="0,1,0,0">
             <Button x:Name="BackButton" Width="78" Content="Назад" Click="BackButton_Click" Height="23"/>
             <Button x:Name="OkButton" IsDefault="True" MinWidth="70" Click="Button_Click" Content="Готово" Width="88"/>
 
         </WrapPanel>
-
+        <Button x:Name="PlayButton" FontSize="6"  Background="#FF6E6191"  Grid.Row="12" Click="PlayButton_Click">
+            Включить музыку
+        </Button>
+        <Button x:Name="StopButton" FontSize="6"  Background="#FF6E6191" Grid.Row="13" Click="StopButton_Click">
+            Остановить
+        </Button>
     </Grid>
 </Page>
 

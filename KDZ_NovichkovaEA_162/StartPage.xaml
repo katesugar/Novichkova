@@ -68,7 +68,12 @@
         </StackPanel>
         <TextBlock x:Name="GreetingText" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center">Добро пожаловать в музыкальное приложение iSugar!</TextBlock>
         <TextBlock x:Name="GreetingText1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Foreground="#FFCFBFE2" Margin="60,10,60,0">Для редактирования пройдите авторизацию.</TextBlock>
-
+        <Button x:Name="PlayButton" FontSize="6" Margin="22,35,0,23" Background="#FF6E6191" Grid.Column="3" Grid.Row="4" Click="PlayButton_Click">
+        Включить музыку
+        </Button>
+        <Button x:Name="StopButton" FontSize="6"  Grid.Column="3" Background="#FF6E6191" Grid.Row="4" Margin="22,56,0,0" Click="StopButton_Click">
+           Остановить
+        </Button>
     </Grid>
 
 </Page>

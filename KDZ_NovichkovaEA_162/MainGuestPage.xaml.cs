@@ -125,5 +125,17 @@ namespace KDZ_NovichkovaEA_162
             }
 
         }
+
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Open(new Uri("music.mp3", UriKind.Relative));
+            mediaPlayer.Play();
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
+        }
     }
 }
