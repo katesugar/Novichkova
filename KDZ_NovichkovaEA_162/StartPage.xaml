@@ -7,23 +7,68 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="500"
       Title="StartPage">
+
     <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="K:\Прога\экзамен\KDZ_NovichkovaEA_162\KDZ_NovichkovaEA_162\bin\Debug\GoodWallpaper.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="81*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="81*"></RowDefinition>
+            <RowDefinition Height="Auto" MinHeight="26"></RowDefinition>
+            <RowDefinition Height="70*" ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="125*" ></ColumnDefinition>
-            <ColumnDefinition Width="125"></ColumnDefinition>
-            <ColumnDefinition Width="113"></ColumnDefinition>
-            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="146"></ColumnDefinition>
+            <ColumnDefinition Width="146"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="LogInButton" Grid.Column="1" Grid.Row="3" Content="Авторизация" FontFamily="Rupster Script Free" Click="LogInButton_Click" Margin="0,0,10,0"/>
-        <Button Grid.Column="2" Grid.Row="3" Content="Войти, как гость" FontFamily="Rupster Script Free"/>
-        <Label x:Name="GreetingText" Grid.Column="0" Grid.Row="1" Content="Добро пожаловать в музыкальное приложение iSugar!" Grid.ColumnSpan="4" HorizontalAlignment="Center" Foreground="#FFC15959" FontSize="18" FontFamily="Rupster Script Free" Margin="22,0" Width="456"/>
-        <Label x:Name="GreetingText1" Grid.Column="0" Grid.Row="2" Content="Для редактирования пройдите авторизацию." Grid.ColumnSpan="4" HorizontalAlignment="Center" Foreground="#FFB86363" FontSize="18" FontFamily="Rupster Script Free" Margin="60,0" Width="380"/>
+        <StackPanel Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Style.Setters>
+                        <Setter Property="Background" Value="#FF6E6191"></Setter>
+                        <Setter Property="FontFamily" Value="Neuropol"></Setter>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle"
+                                                             To="360" Duration="0:0:1" RepeatBehavior="Forever"></DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle"
+                                                    Duration="0:0:0.3"></DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="LogInButton" Grid.Column="1" Grid.Row="3" Content="Авторизация" RenderTransformOrigin="0.5,0.5" Click="LogInButton_Click" ToolTip="Авторизация" Background="#FF6E6191" Height="40">
+                <Button.RenderTransform>
+                    <RotateTransform></RotateTransform>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="Войти, как гость" Click="Button_Click" Height="38">
+                <Button.RenderTransform>
+                    <RotateTransform></RotateTransform>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+        <TextBlock x:Name="GreetingText" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center">Добро пожаловать в музыкальное приложение iSugar!</TextBlock>
+        <TextBlock x:Name="GreetingText1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Foreground="#FFCFBFE2" Margin="60,10,60,0">Для редактирования пройдите авторизацию.</TextBlock>
+
     </Grid>
+
 </Page>

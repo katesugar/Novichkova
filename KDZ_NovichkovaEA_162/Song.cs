@@ -29,6 +29,9 @@ namespace KDZ_NovichkovaEA_162
         {
             return string.Format("{0} - {1}", Name, Artist);
         }
-
+        public string MakeString()
+        {
+            return string.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}", Name, Artist.Name, Artist.Age, Album.Name, Album.Year, Year, Genre);
+        }
     }
 }

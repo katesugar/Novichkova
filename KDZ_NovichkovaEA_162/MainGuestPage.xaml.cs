@@ -11,23 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 using System.IO;
-using System.Data.Entity;
 
 namespace KDZ_NovichkovaEA_162
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для MainGuestPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class MainGuestPage : Page
     {
-        public MainPage()
+        public MainGuestPage()
         {
             InitializeComponent();
             songs = DataLoad();
             listofmusicBox.ItemsSource = songs;
             selectedSong = listofmusicBox.SelectedIndex;
-            
+
         }
         public List<Song> songs = new List<Song>();
         public int selectedSong;
@@ -82,59 +82,6 @@ namespace KDZ_NovichkovaEA_162
             listofmusicBox.Items.Refresh();
         }
 
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            NewSongPage newSongPage = new NewSongPage();
-            NavigationService.Navigate(newSongPage);
-
-        }
-
-        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (SearchSong.IsChecked == true)
-            {
-                if (string.IsNullOrWhiteSpace(SearchTextBox.Text)) listofmusicBox.ItemsSource = songs;
-                else listofmusicBox.ItemsSource = songs.FindAll(song => song.Name.ToUpper().Contains(SearchTextBox.Text.ToUpper()));
-            }
-            if(SearchArtist.IsChecked==true)
-            {
-                if (string.IsNullOrWhiteSpace(SearchTextBox.Text)) listofmusicBox.ItemsSource = songs;
-                else listofmusicBox.ItemsSource = songs.FindAll(song => song.Artist.Name.ToUpper().Contains(SearchTextBox.Text.ToUpper()));
-            }
-
-        }
-
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (listofmusicBox.SelectedIndex != -1)
-            {
-                songs.RemoveAt(listofmusicBox.SelectedIndex);
-                SaveData();
-                listofmusicBox.Items.Refresh();
-            }
-        }
-
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (listofmusicBox.SelectedItem == null) return;
-
-            Song selectedSong = listofmusicBox.SelectedItem as Song;
-
-            EditingPage editingPage = new EditingPage();
-            NavigationService.Navigate(editingPage);
-            editingPage.AddNameOfSongTextBox.Text = selectedSong.Name;
-            editingPage.AddNameOfArtistTextBox.Text = selectedSong.Artist.Name;
-            editingPage.AddAgeTextBox.Text = selectedSong.Artist.Age.ToString();
-            editingPage.AddNameOfAlbumTextBox.Text = selectedSong.Album.Name;
-            editingPage.AddYearOfAlbumTextBox.Text = selectedSong.Album.Year.ToString();
-            editingPage.AddYearOfSongTextBox.Text = selectedSong.Year.ToString();
-            editingPage.AddGenreTextBox.Text = selectedSong.Genre;
-            songs.RemoveAt(listofmusicBox.SelectedIndex);
-            SaveData();
-            listofmusicBox.Items.Refresh();        
-        }
-
         private void InfoButton_Click(object sender, RoutedEventArgs e)
         {
             if (listofmusicBox.SelectedItem == null) return;
@@ -164,8 +111,19 @@ namespace KDZ_NovichkovaEA_162
             binding6.Source = selectedSong.Genre;
             infoPage.Genre.SetBinding(TextBlock.TextProperty, binding6);
         }
-        
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchSong.IsChecked == true)
+            {
+                if (string.IsNullOrWhiteSpace(SearchTextBox.Text)) listofmusicBox.ItemsSource = songs;
+                else listofmusicBox.ItemsSource = songs.FindAll(song => song.Name.ToUpper().Contains(SearchTextBox.Text.ToUpper()));
+            }
+            if (SearchArtist.IsChecked == true)
+            {
+                if (string.IsNullOrWhiteSpace(SearchTextBox.Text)) listofmusicBox.ItemsSource = songs;
+                else listofmusicBox.ItemsSource = songs.FindAll(song => song.Artist.Name.ToUpper().Contains(SearchTextBox.Text.ToUpper()));
+            }
 
-      
+        }
     }
 }

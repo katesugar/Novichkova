@@ -9,11 +9,15 @@
       Title="InfoPage">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="K:\Прога\экзамен\KDZ_NovichkovaEA_162\KDZ_NovichkovaEA_162\bin\Debug\GoodWallpaper.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="23*"/>
-            <ColumnDefinition Width="227*"/>
-            <ColumnDefinition Width="19*"/>
-            <ColumnDefinition Width="231*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="143*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,8 +25,31 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="3"  VerticalAlignment="Center" >Название песни:</Label>
         
+        <TextBlock Grid.Column="2"  VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2">Название песни:</TextBlock>
+        <TextBlock x:Name="NameOfSong" Grid.Column="4" VerticalAlignment="Center"  Grid.Row="2" />
+        <TextBlock Grid.Column="2"  Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Center">Год выхода песни:</TextBlock>
+        <TextBlock x:Name="YearOfSong" Grid.Column="4" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center"  Grid.ColumnSpan="2">Исполнитель:</TextBlock>
+        <TextBlock x:Name="NameOfArtist" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center"  Grid.ColumnSpan="2">Возраст иполнителя:</TextBlock>
+        <TextBlock x:Name="AgeOfArtist" Grid.Column="4" Grid.Row="5" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center"  Grid.ColumnSpan="2">Название альбома:</TextBlock>
+        <TextBlock x:Name="NameOfAlbum" Grid.Column="4" Grid.Row="6" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center"  Grid.ColumnSpan="2">Год выхода альбома:</TextBlock>
+        <TextBlock x:Name="YearOfAlbum" Grid.Column="4" Grid.Row="7" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="8" VerticalAlignment="Center" Grid.ColumnSpan="2">Жанр музыки:</TextBlock>
+        <TextBlock x:Name="Genre" Grid.Column="4" Grid.Row="8" VerticalAlignment="Center"/>
+        <Button Grid.Column="4" Grid.Row="11" Click="Button_Click">Назад</Button>
     </Grid>
 </Page>

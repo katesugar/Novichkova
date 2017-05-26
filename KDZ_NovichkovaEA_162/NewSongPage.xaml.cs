@@ -62,5 +62,11 @@ namespace KDZ_NovichkovaEA_162
 
             }
         }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            MainPage mainPage = new MainPage();
+            NavigationService.Navigate(mainPage);
+        }
     }
 }

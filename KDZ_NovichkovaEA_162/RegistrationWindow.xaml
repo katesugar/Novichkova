@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KDZ_NovichkovaEA_162"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="200" Width="300">
+        Title="RegistrationWindow" Height="223.404" Width="380.851">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,14 +17,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="1">Введите логин:</TextBlock>
-        <TextBox Name="loginBox" Grid.Row="2" MinWidth="200"></TextBox>
-        <TextBlock Grid.Row="3">Введите пароль:</TextBlock>
-        <PasswordBox Name="passwordBox" Grid.Row="4" MinWidth="200"></PasswordBox>
+        <TextBlock Grid.Row="1" FontFamily="Rupster Script Free" >Введите логин:</TextBlock>
+        <TextBox Name="loginBox" Grid.Row="2" MinWidth="200"/>
+        <TextBlock Grid.Row="3" FontFamily="Rupster Script Free">Введите пароль:</TextBlock>
+        <PasswordBox Name="passwordBox" Grid.Row="4" MinWidth="200"/>
 
-        <WrapPanel Grid.Row="6" HorizontalAlignment="Right">
-            <Button x:Name="btnOK" IsDefault="True" MinWidth="60" Click="Button_Click" >OK</Button>
-            <Button x:Name="btnCancel" IsCancel="True" MinWidth="60">Отмена</Button>
+        <WrapPanel Grid.Row="6" HorizontalAlignment="Right" Width="140">
+            <Button x:Name="BackButton" Width="70" Content="Назад" Click="BackButton_Click"/>
+            <Button x:Name="OkButton" IsDefault="True" MinWidth="70" Click="Button_Click" Content="Готово"/>
+
         </WrapPanel>
 
     </Grid>

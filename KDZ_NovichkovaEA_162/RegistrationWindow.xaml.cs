@@ -11,9 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace KDZ_NovichkovaEA_162
 {
@@ -22,31 +19,23 @@ namespace KDZ_NovichkovaEA_162
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        
-        public RegistrationWindow()
+        public Authorisation Authorisation { get; private set; }
+
+        public RegistrationWindow(Authorisation a)
         {
             InitializeComponent();
-            
+            Authorisation = a;
+            this.DataContext = Authorisation;
+        }
+
+        private void Accept_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           if(loginBox.Text == "guest")
-            {
-                if(passwordBox.Password == "guestpassword")
-                {
-                    this.Close();
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Неправильный логин или пароль!", "ОШИБКА!", MessageBoxButton.OKCancel, MessageBoxImage.Error);
-                }
-            }
-           else
-            {
-                MessageBox.Show("Неправильный логин или пароль!", "ОШИБКА!", MessageBoxButton.OKCancel, MessageBoxImage.Error);
-            }
+
         }
     }
 }

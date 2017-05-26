@@ -30,5 +30,11 @@ namespace KDZ_NovichkovaEA_162
             RegistrationPage registrationPage = new RegistrationPage();
             NavigationService.Navigate(registrationPage);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainGuestPage mainGuestPage = new MainGuestPage();
+            NavigationService.Navigate(mainGuestPage);
+        }
     }
 }

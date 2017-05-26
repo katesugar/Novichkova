@@ -24,5 +24,17 @@ namespace KDZ_NovichkovaEA_162
         {
             InitializeComponent();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewSongPage newSongPage = new NewSongPage();
+            NavigationService.Navigate(newSongPage);
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
