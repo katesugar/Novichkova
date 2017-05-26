@@ -39,12 +39,7 @@
             <Button x:Name="OkButton" IsDefault="True" MinWidth="70" Click="Button_Click" Content="Готово" Width="88"/>
 
         </WrapPanel>
-        <Button x:Name="PlayButton" FontSize="6"  Background="#FF6E6191"  Grid.Row="12" Click="PlayButton_Click">
-            Включить музыку
-        </Button>
-        <Button x:Name="StopButton" FontSize="6"  Background="#FF6E6191" Grid.Row="13" Click="StopButton_Click">
-            Остановить
-        </Button>
+       
     </Grid>
 </Page>
 

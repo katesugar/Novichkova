@@ -165,7 +165,7 @@ namespace KDZ_NovichkovaEA_162
             infoPage.Genre.SetBinding(TextBlock.TextProperty, binding6);
         }
 
-        MediaPlayer mediaPlayer = new MediaPlayer();
+        public MediaPlayer mediaPlayer = new MediaPlayer();
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             mediaPlayer.Open(new Uri("music.mp3", UriKind.Relative));
