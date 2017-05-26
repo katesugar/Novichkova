@@ -3,11 +3,10 @@ Yellow Submarine,The Beatles,50,Yellow Submarine,1969,1969,Pop
 Wrecking Ball,Miley Cyrus,24,Bangerz,2013,2013,Pop
 Malibu,Miley Cyrus,24,Malibu,2017,2017,Pop
 Let It Be,The Beatles,50,Let It Be,1970,1970,Pop
-Here Comes The Sun,The Beatles,50,Abbey Road,1969,1970,Pop
 Radioactive,Imagine Dragons,28,Night Visions,2011,2012,Indie-pop
 Tiptoe,Imagine Dragons,28,Night Visions,2011,2011,Indie-pop
-Bon Appetit,Katy Perry,32,Bon Appetit,2017,2017,Pop
 Dig Down,Muse,42,Dig Down,2017,2017,Alternative
 Young and Menace,Fall Out Boy,34,M A N  I A,2017,2017,Alternative
 With Or Without You,U2,36,The Joshua Tree,2017,2017,Post-punk
 They Put A Body In The Bayou,The Orwells,29,Terrible Human Being,2017,2017,Alternative
+Bon Appetit,Katy Perry,32,Bon Appetit,2017,2017,Pop
